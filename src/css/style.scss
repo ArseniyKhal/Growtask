@@ -1,0 +1,27 @@
+@import "null";
+
+@font-face {
+	font-family: "GoghExtraBold";
+	src: local('GoghExtraBold'),
+		url("../fonts/Gogh-ExtraBold.otf") format("opentype"),
+		url("../fonts/Gogh-ExtraBold.ttf") format("truetype"),
+		url("../fonts/Gogh-ExtraBold.woff") format("woff"),
+		url("../fonts/Gogh-ExtraBold.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+// $colorText: #000000;
+// $colorTextWhite: #fff;
+
+body {
+	font-family: "GoghExtraBold";
+	// font-family: "Raleway", sans-serif;
+	// font-family: sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	// font-size: 0.875rem;
+}
+
+
