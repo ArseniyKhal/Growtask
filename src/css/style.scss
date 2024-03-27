@@ -1,8 +1,12 @@
+// обнуляющие стили
 @import "null";
 
+// шрифты
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap");
 @font-face {
-	font-family: "GoghExtraBold";
-	src: local('GoghExtraBold'),
+	font-family: "Gogh";
+	src:
+		local("Gogh"),
 		url("../fonts/Gogh-ExtraBold.otf") format("opentype"),
 		url("../fonts/Gogh-ExtraBold.ttf") format("truetype"),
 		url("../fonts/Gogh-ExtraBold.woff") format("woff"),
@@ -11,17 +15,10 @@
 	font-style: normal;
 }
 
-
-// $colorText: #000000;
-// $colorTextWhite: #fff;
-
 body {
-	font-family: "GoghExtraBold";
-	// font-family: "Raleway", sans-serif;
-	// font-family: sans-serif;
+	// font-family: "Gogh";
+	font-family: "Raleway", sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	// font-size: 0.875rem;
+	font-size: 1rem;
 }
-
-
