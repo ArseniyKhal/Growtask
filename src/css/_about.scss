@@ -1,0 +1,94 @@
+// =============== about ===============
+
+.about {
+	background-color: $socialHover;
+	&__content {
+		position: relative;
+		padding: 5rem 0;
+		@media screen and (min-width: 75.01em) {
+			padding: 7.5rem 0;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1.25rem;
+		}
+	}
+	&__info {
+		margin-bottom: 3.75rem;
+		@media screen and (min-width: 48em) and (max-width: 75em) {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+	}
+	&__title {
+		color: $textH2;
+		margin-bottom: 2.5rem;
+		@media screen and (max-width: 75em) {
+			margin-bottom: 1.25rem;
+		}
+	}
+	&__text {
+		margin-bottom: 5rem;
+		line-height: 1.5;
+		max-width: 36.25rem;
+		@media screen and (min-width: 48.05em) {
+			font-size: 1.25rem;
+		}
+		@media screen and (max-width: 75em) {
+			margin-bottom: 2.5rem;
+		}
+	}
+	&__numbers {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	&__number {
+		background-color: $grayBlack;
+		border-radius: 0.5rem;
+		padding: 2.5rem;
+		max-width: 32.5rem;
+		@media screen and (max-width: 48.05em) {
+			max-width: 100%;
+		}
+		@media screen and (max-width: 75em) {
+			padding: 1.25rem;
+		}
+		& h1 {
+			color: $light;
+			margin-bottom: 1.25rem;
+		}
+
+		& p {
+			color: $grayWhite;
+			line-height: 1.5;
+		}
+	}
+	&__photos {
+		width: 100%;
+		display: flex;
+		gap: 1rem;
+		@media screen and (max-width: 75em) {
+			width: fit-content;
+		}
+		@media screen and (min-width: 75.01em) {
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+	}
+	&__photo {
+		height: 25rem;
+		width: 100%;
+		@media screen and (max-width: 85.375em) {
+			height: 20rem;
+		}
+		@media screen and (max-width: 75em) {
+			height: 16rem;
+			width: 21.5rem;
+		}
+		@media screen and (max-width: 48em) {
+			height: 12.5rem;
+			width: 17.5rem;
+		}
+	}
+}
