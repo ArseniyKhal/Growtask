@@ -18,8 +18,43 @@
 	font-style: normal;
 }
 
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Gogh";
+	font-weight: 700;
+	line-height: 1;
+	color: $textBlack;
+}
+h1 {
+	font-size: 3.5rem;
+	@media screen and (max-width: 75em) {
+		font-size: 2rem;
+	}
+}
+h2 {
+	font-size: 2.5rem;
+	@media screen and (max-width: 75em) {
+		font-size: 1.75rem;
+	}
+}
+h3 {
+	font-size: 1.75rem;
+	@media screen and (max-width: 75em) {
+		font-size: 1.5rem;
+	}
+}
+h4 {
+	font-size: 1.25rem;
+}
+a {
+	font-family: "Raleway", sans-serif;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
 body {
-	// font-family: "Gogh";
 	font-family: "Raleway", sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -43,12 +78,19 @@ body {
 
 [class*="__container"] {
 	margin: 0 auto;
-	padding: 0 15px;
-	// ширина FullHD 1420px (1450 с отступами)
-	max-width: 90.625em;
+	padding: 0 16px;
+	// ширина FullHD 1420px
+	max-width: 90.75em;
 
-	// ширина HD 1276px (1306 с отступами)
-	@media screen and (max-width: 81.625em) {
+	// ширина HD 1276px
+	@media screen and (max-width: 85.375em) {
+		max-width: 81.75em;
+	}
+	// ширина Tablet 736px
+	@media screen and (max-width: 768px) {
+	}
+	// ширина Mobile 342px
+	@media screen and (max-width: 374px) {
 	}
 }
 
@@ -71,145 +113,8 @@ main {
 	margin-top: 4.625rem;
 }
 
-// header
-.header {
-	margin-bottom: 2px;
-	position: fixed;
-	width: 100%;
-	&__firstLine {
-		box-shadow: 0 0 1.56rem 0 rgba(5, 25, 25, 0.08);
-		background-color: $grayWhite;
-		height: 4.5rem;
-		@media screen and (max-width: 81.62em) {
-			position: relative;
-			z-index: 7;
-		}
-	}
-	&__container {
-		position: relative;
-		top: -4.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	&__content {
-		height: 4.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		@media screen and (max-width: 81.62em) {
-			width: 100%;
-			z-index: 8;
-		}
-	}
-}
-
-.logo {
-	overflow: hidden;
-	position: relative;
-	&__picture {
-		height: 48px;
-		display: flex;
-		align-items: center;
-		transition: transform 0.3s ease 0s;
-	}
-	&:hover .logo__picture {
-		transform: translateY(-3rem);
-	}
-	&:hover .logo__buttonUp {
-		top: 50%;
-	}
-	&__buttonUp {
-		position: absolute;
-		transition: all 0.3s ease 0s;
-		transform: translate(-50%, -50%);
-		font-family: "Gogh";
-		color: $main;
-		line-height: 1;
-		top: 150%;
-		left: 50%;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		&:active {
-			color: $dark;
-		}
-	}
-	&.active {
-		display: none;
-	}
-}
-
-.titleMenu {
-	display: none;
-	font-family: "Gogh";
-	color: $grayBlack;
-	font-size: 1.25rem;
-	line-height: 1;
-	&.active {
-		display: block;
-	}
-}
-
-.navigation {
-	@media screen and (max-width: 81.62em) {
-		position: absolute;
-		top: -100vh;
-		left: 0;
-		background-color: $grayWhite;
-		height: 100vh;
-		width: 100vw;
-		padding: 1.25rem 1rem;
-		transition: top 0.3s ease 0s;
-	}
-	&__list {
-		display: flex;
-		height: 100%;
-		gap: 0.75rem;
-		font-weight: 700;
-		line-height: 1.5;
-		color: $grayDark;
-		@media screen and (max-width: 81.62em) {
-			flex-direction: column;
-			height: auto;
-			margin-bottom: 40px;
-		}
-	}
-	&__item {
-		display: flex;
-		align-items: center;
-		height: 3rem;
-		padding: 0 1.25rem;
-		cursor: pointer;
-		transition: color 0.3s ease 0s;
-		&:hover {
-			color: $dark;
-		}
-		&:last-child {
-			@extend .button;
-			font-size: 0.875rem;
-			color: $grayWhite;
-			@media screen and (max-width: 81.62em) {
-				width: 100px;
-				margin-top: 1.75rem;
-			}
-			@media screen and (max-width: 25.25rem) {
-				width: 100%;
-				display: flex;
-				justify-content: center;
-			}
-		}
-	}
-	&.active {
-		top: 4.5rem;
-	}
-}
-
 .social {
-	@media screen and (min-width: 81.62em) {
+	@media screen and (min-width: 75em) {
 		display: none;
 	}
 	display: flex;
@@ -234,52 +139,5 @@ main {
 	}
 }
 
-.burger {
-	@media screen and (min-width: 81.62em) {
-		display: none;
-	}
-	position: relative;
-	width: 3rem;
-	height: 3rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	&__line {
-		position: relative;
-		width: 1.25rem;
-		height: 0.875rem;
-		& span,
-		&::before,
-		&::after {
-			background-color: $grayWhite;
-			position: absolute;
-			width: 100%;
-			left: 0;
-			height: 0.125rem;
-			border-radius: 0.25rem;
-			transition: all 0.3s ease 0s;
-		}
-		& span {
-			top: calc(50% - 0.125rem / 2);
-		}
-		&::before {
-			content: "";
-			top: 0;
-		}
-		&::after {
-			content: "";
-			bottom: 0;
-		}
-		&.active span {
-			transform: rotate3d(0, 1, 0, 90deg);
-		}
-		&.active::before {
-			transform: rotate(45deg);
-			top: 50%;
-		}
-		&.active::after {
-			transform: rotate(-45deg);
-			top: 50%;
-		}
-	}
-}
+@import "header";
+@import "firstscreen";

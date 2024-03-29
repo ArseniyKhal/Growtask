@@ -1,0 +1,122 @@
+//=============== firstscreen section ================
+.firstscreen {
+	&__container {
+		@media screen and (max-width: 75em) {
+			gap: 1.125rem;
+			padding-top: 3.75rem;
+			padding-bottom: 5rem;
+		}
+		@media screen and (max-width: 47.98em) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			gap: 2.5rem;
+		}
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+		padding-top: 2.5rem;
+		padding-bottom: 7.5rem;
+	}
+	&__banner {
+		@media screen and (max-width: 75em) {
+			gap: 1.25rem;
+		}
+		display: flex;
+		gap: 2.5rem;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__title {
+		& span {
+			color: $main;
+		}
+	}
+	&__text {
+		@media screen and (max-width: 75em) {
+			font-size: 1rem;
+		}
+		@media screen and (max-width: 47.98em) {
+			max-width: 100%;
+		}
+		font-size: 1.25rem;
+		line-height: 1.5;
+		max-width: 460px;
+	}
+	&__scrollBox {
+		@media screen and (max-width: 75em) {
+			flex-direction: column;
+			align-items: start;
+			padding: 1.25rem;
+			margin-right: 1.125rem;
+		}
+		@media screen and (max-width: 47.98em) {
+			max-width: 100%;
+			margin-right: 0;
+		}
+		background-color: $grayBlack;
+		border-radius: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.25rem;
+		padding: 2.5rem;
+		max-width: 31.5rem;
+		height: 8rem;
+	}
+	&__subtitle {
+		color: $grayWhite;
+		& span {
+			color: $main;
+		}
+	}
+	&__link {
+		@media screen and (max-width: 75em) {
+			width: 100%;
+		}
+		color: $grayWhite;
+		font-size: 0.875rem;
+		width: 6.25rem;
+		height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.8rem;
+	}
+	&__images {
+		grid-row: span 2;
+	}
+}
+.imagesBox {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+
+	&__img {
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+		// aspect-ratio: 1/1;
+		border-radius: 0.5rem;
+		background-color: $main;
+		font-size: 40px;
+		position: relative;
+		background: url("../img/non-image.png") no-repeat center center;
+		background-size: cover;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&:nth-child(2n + 1) {
+			margin-top: -50%;
+		}
+		&:nth-child(1) {
+			margin-top: 0;
+		}
+		&:nth-child(2) {
+			margin-top: 50%;
+		}
+	}
+}
