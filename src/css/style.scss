@@ -100,6 +100,7 @@ body {
 	background-color: $main;
 	transition: background-color 0.3s ease 0s;
 	cursor: pointer;
+	height: 3rem;
 	&:hover {
 		background-color: $light;
 	}
@@ -114,20 +115,12 @@ main {
 }
 
 .social {
-	@media screen and (min-width: 75em) {
-		display: none;
-	}
 	display: flex;
 	gap: 1rem;
 	&__item {
-		height: 3rem;
-		width: 3rem;
 		background-color: $socialStatic;
 		box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
 		border-radius: 0.25rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		cursor: pointer;
 		transition: background-color 0.3s ease 0s;
 		&:hover {
@@ -135,6 +128,13 @@ main {
 		}
 		&:active {
 			background-color: $socialPress;
+		}
+		& a {
+			height: 3rem;
+			width: 3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }
@@ -164,3 +164,4 @@ main {
 @import "header";
 @import "firstscreen";
 @import "about";
+@import "footer";

@@ -32,6 +32,11 @@
 			z-index: 8;
 		}
 	}
+	&__social {
+		@media screen and (min-width: 75em) {
+			display: none;
+		}
+	}
 }
 
 .logo {

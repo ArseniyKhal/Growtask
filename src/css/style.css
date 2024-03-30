@@ -165,6 +165,7 @@ body {
   -webkit-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
   cursor: pointer;
+  height: 3rem;
 }
 .button:hover, .navigation__item:hover:last-child {
   background-color: #17E5E5;
@@ -183,27 +184,11 @@ main {
   display: flex;
   gap: 1rem;
 }
-@media screen and (min-width: 75em) {
-  .social {
-    display: none;
-  }
-}
 .social__item {
-  height: 3rem;
-  width: 3rem;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
           box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
   border-radius: 0.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
@@ -213,6 +198,19 @@ main {
 }
 .social__item:active {
   background-color: #DAF2F2;
+}
+.social__item a {
+  height: 3rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .imagesBox {
@@ -284,6 +282,11 @@ main {
   .header__content {
     width: 100%;
     z-index: 8;
+  }
+}
+@media screen and (min-width: 75em) {
+  .header__social {
+    display: none;
   }
 }
 
@@ -759,4 +762,224 @@ main {
     height: 12.5rem;
     width: 17.5rem;
   }
+}
+
+.footer {
+  background-color: #030D0D;
+  padding: 10rem 0;
+}
+@media screen and (max-width: 75em) {
+  .footer {
+    padding: 5rem 0;
+    margin: 0 -1rem;
+  }
+}
+.footer__content {
+  padding: 3.75rem;
+  color: #FFFFFF;
+  background-image: url("../img/footerBG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 75.05em) {
+  .footer__content {
+    display: grid;
+    grid-template-columns: 1fr 708px;
+    -webkit-column-gap: 40px;
+       -moz-column-gap: 40px;
+            column-gap: 40px;
+    border-radius: 0.5rem;
+  }
+}
+@media screen and (min-width: 85.4em) {
+  .footer__content {
+    grid-template-columns: 1fr 780px;
+    -webkit-column-gap: 48px;
+       -moz-column-gap: 48px;
+            column-gap: 48px;
+  }
+}
+@media screen and (max-width: 75em) {
+  .footer__content {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .footer__content {
+    background-image: url("../img/footerBGMobile.svg");
+  }
+}
+.footer__title {
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 56em) {
+  .footer__title {
+    margin-bottom: 1.25rem;
+  }
+}
+.footer__subtitle {
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+}
+.footer__titleBox {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 75.05em) {
+  .footer__titleBox {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 56em) {
+  .footer__titleBox p {
+    max-width: 21.375rem;
+  }
+}
+@media screen and (max-width: 47.95em) {
+  .footer__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.form {
+  padding: 2.5rem;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+}
+@media screen and (min-width: 48em) {
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+    grid-row: 1/3;
+    grid-column: 2/3;
+  }
+}
+@media screen and (max-width: 75em) {
+  .form {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+}
+.form input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc((100% - 1.25rem) / 2);
+          flex: 0 1 calc((100% - 1.25rem) / 2);
+  border: 2px solid #DAF2F2;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  color: #3D4040;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+.form input:focus {
+  border-color: #14CCCC;
+}
+.form input:hover {
+  border-color: #17E5E5;
+}
+.form input:active {
+  border-color: #DAF2F2;
+}
+.form input:focus-visible {
+  border-color: #14CCCC;
+}
+.form input:disabled {
+  background-color: #DAF2F2;
+}
+@media screen and (max-width: 56em) {
+  .form input {
+    width: 100%;
+  }
+}
+.form__buttonBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 48em) {
+  .form__buttonBox {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 47.98em) {
+  .form__buttonBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+.form__buttonBox button {
+  width: 10.25rem;
+}
+@media screen and (max-width: 47.98em) {
+  .form__buttonBox button {
+    width: 100%;
+  }
+}
+.form__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.form__checkbox + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: #3D4040;
+}
+.form__checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  margin-right: 0.5rem;
+  background-image: url("../img/checkboxS.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.form__checkbox:not(:disabled):not(:checked) + label:hover::before {
+  background-image: url("../img/checkboxH.svg");
+}
+.form__checkbox:checked + label::before {
+  background-image: url("../img/checkboxAS.svg");
+}
+.form__checkbox:checked + label:hover::before {
+  background-image: url("../img/checkboxAH.svg");
 }
