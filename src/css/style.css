@@ -348,7 +348,6 @@ main {
 }
 
 .burger {
-  position: relative;
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -762,6 +761,105 @@ main {
     height: 12.5rem;
     width: 17.5rem;
   }
+}
+
+.faq {
+  padding: 7.5rem 0;
+}
+@media screen and (max-width: 48em) {
+  .faq {
+    padding: 2.5rem 0 5rem 0;
+  }
+}
+.faq__title {
+  padding-bottom: 3.75rem;
+}
+@media screen and (max-width: 48em) {
+  .faq__title {
+    padding-bottom: 2.5rem;
+  }
+}
+.faq__questionBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.faq__questionBox:hover .faq__question {
+  color: #14CCCC;
+}
+.faq__questionBox:active .faq__question {
+  color: #11A6A6;
+}
+.faq__question {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #05051A;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+.faq__item {
+  background-color: #E1FAFA;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+}
+.faq__item:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+@media screen and (max-width: 48em) {
+  .faq__item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.faq__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  background-color: #14CCCC;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 1rem;
+}
+.faq__button span {
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 45%;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+.faq__item.active .faq__button span {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.faq__answer {
+  -webkit-transition: max-height 1s ease;
+  transition: max-height 1s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+.faq__item.active .faq__answer {
+  max-height: 300px;
 }
 
 .footer {

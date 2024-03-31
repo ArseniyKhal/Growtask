@@ -1,0 +1,72 @@
+.faq {
+	padding: 7.5rem 0;
+	@media screen and (max-width: 48em) {
+		padding: 2.5rem 0 5rem 0;
+	}
+	&__title {
+		padding-bottom: 3.75rem;
+		@media screen and (max-width: 48em) {
+			padding-bottom: 2.5rem;
+		}
+	}
+	&__questionBox {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&:hover .faq__question {
+			color: $main;
+		}
+		&:active .faq__question {
+			color: $dark;
+		}
+	}
+	&__question {
+		font-weight: 700;
+		font-size: 1.25rem;
+		line-height: 1.5;
+		color: $textBlack;
+		transition: color 0.3s ease 0s;
+	}
+	&__item {
+		background-color: $grayLighter;
+		border-radius: 0.5rem;
+		padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+			@media screen and (max-width: 48em) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 0.25rem;
+		background-color: $main;
+		flex-shrink: 0;
+		margin-left: 1rem;
+		& span {
+			background-image: url("../img/plus.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 45%;
+			width: 100%;
+			height: 100%;
+			transition: transform 1s ease;
+		}
+	}
+	&__item.active .faq__button span {
+		transform: rotate(45deg);
+	}
+	&__answer {
+		transition: max-height 1s ease;
+		overflow: hidden;
+		max-height: 0;
+	}
+	&__item.active .faq__answer {
+		max-height: 300px;
+	}
+}

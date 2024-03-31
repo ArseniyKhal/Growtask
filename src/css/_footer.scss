@@ -101,9 +101,6 @@
 		&:disabled {
 			background-color: $grayLight;
 		}
-		&::placeholder {
-			// color: $grayDark;
-		}
 		@media screen and (max-width: 56em) {
 			width: 100%;
 		}

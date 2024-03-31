@@ -5,7 +5,7 @@ const buttonUpElement = document.getElementById('buttonUp');
 const logoElement = document.getElementById('logo');
 const titleMenuElement = document.getElementById('titleMenu');
 
-// открытие/закрытие меню
+// открытие/закрытие меню header
 headerBurgerElement.addEventListener("click", () => {
 	navMenu.classList.toggle('active');
 	burgerElement.classList.toggle('active');
@@ -13,11 +13,13 @@ headerBurgerElement.addEventListener("click", () => {
 	titleMenuElement.classList.toggle('active');
 });
 
-// вернуться наверх плавно
+// перемотка на верх страницы
 buttonUpElement.addEventListener("click", () => window.scrollTo({
 	top: 0,
 	behavior: 'smooth',
 }))
+
+
 
 // слайдер
 // const slider = document.querySelector('.slider');
@@ -55,3 +57,21 @@ buttonUpElement.addEventListener("click", () => window.scrollTo({
 // 		slides.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 // 	}
 // }
+
+// спойлеры
+const answers = document.querySelectorAll('.faq__item');
+const buttons = document.querySelectorAll('.faq__button');
+
+buttons.forEach(function (button, index) {
+	button.addEventListener('click', function () {
+		// Закрываем все спойлеры, кроме текущего
+		answers.forEach(function (answer, i) {
+			if (i !== index) {
+				answer.classList.remove('active');
+			}
+		});
+		// Переключаем состояние текущего спойлера
+		const currentAnswer = answers[index];
+		currentAnswer.classList.toggle('active');
+	});
+});
