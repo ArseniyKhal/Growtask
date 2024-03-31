@@ -58,6 +58,25 @@ buttonUpElement.addEventListener("click", () => window.scrollTo({
 // 	}
 // }
 
+// табы
+document.addEventListener("DOMContentLoaded", function () {
+	const tabsContainer = document.querySelector('.tabs__buttons');
+	tabsContainer.addEventListener('click', function (event) {
+		const targetTab = event.target.closest('.tabs__btnBox');
+		if (!targetTab) return;
+
+		const tabs = tabsContainer.querySelectorAll('.tabs__btnBox');
+		tabs.forEach(tab => tab.classList.remove('active'));
+		targetTab.classList.add('active');
+
+		const targetIndex = targetTab.getAttribute('data-target');
+		const targetContent = document.querySelectorAll('.tabs__block')[targetIndex];
+		const allTabsContent = document.querySelectorAll('.tabs__block');
+		allTabsContent.forEach(content => content.classList.remove('active'));
+		targetContent.classList.add('active');
+	});
+});
+
 // спойлеры
 const answers = document.querySelectorAll('.faq__item');
 const buttons = document.querySelectorAll('.faq__button');

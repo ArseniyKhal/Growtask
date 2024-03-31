@@ -763,6 +763,162 @@ main {
   }
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.presentation {
+  background-color: #E1FAFA;
+}
+.presentation .tabs {
+  padding: 7.5rem 0;
+}
+@media screen and (max-width: 56em) {
+  .presentation .tabs {
+    padding: 5rem 0;
+  }
+}
+@media screen and (min-width: 47.98em) {
+  .presentation .tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 56em) {
+  .presentation .tabs {
+    gap: 2.5rem;
+  }
+}
+.presentation .tabs__body {
+  overflow: hidden;
+}
+@media screen and (min-width: 47.98em) {
+  .presentation .tabs__body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 342px;
+            flex: 1 1 342px;
+  }
+}
+@media screen and (min-width: 56em) {
+  .presentation .tabs__body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 844px;
+            flex: 0 1 844px;
+  }
+}
+@media screen and (min-width: 85.4em) {
+  .presentation .tabs__body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 940px;
+            flex: 0 1 940px;
+  }
+}
+@media screen and (max-width: 47.98em) {
+  .presentation .tabs__body {
+    margin-bottom: 2.5rem;
+  }
+}
+.presentation .tabs__block {
+  display: none;
+}
+.presentation .tabs__block.active {
+  display: block;
+}
+.presentation .tabs__block img {
+  opacity: 0;
+  border-radius: 0.5rem;
+  -webkit-animation: fadeIn 0.3s ease forwards;
+          animation: fadeIn 0.3s ease forwards;
+  width: 100%;
+  height: 100%;
+}
+.presentation .tabs__block.active img {
+  opacity: 1;
+}
+.presentation .tabs__buttons {
+  width: 100%;
+}
+@media screen and (min-width: 47.98em) {
+  .presentation .tabs__buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 378px;
+            flex: 0 1 378px;
+  }
+}
+@media screen and (min-width: 56em) {
+  .presentation .tabs__buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 392px;
+            flex: 0 1 392px;
+  }
+}
+@media screen and (min-width: 85.4em) {
+  .presentation .tabs__buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 440px;
+            flex: 0 1 440px;
+  }
+}
+.presentation .tabs__btnBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+  background-color: #FFFFFF;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
+          box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
+  padding: 0.75rem;
+  cursor: pointer;
+  outline: 0px solid #DAF2F2;
+  -webkit-transition: outline 0.3s ease 0s;
+  transition: outline 0.3s ease 0s;
+  width: 100%;
+}
+.presentation .tabs__btnBox p {
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+.presentation .tabs__btnBox:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+@media screen and (max-width: 48em) {
+  .presentation .tabs__btnBox:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.presentation .tabs__btnBox img {
+  width: 3rem;
+  height: 3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.25rem;
+}
+.presentation .tabs__btnBox:hover {
+  outline: 2px solid #DAF2F2;
+}
+.presentation .tabs__btnBox.active {
+  outline: 2px solid #14CCCC;
+}
+
 .faq {
   padding: 7.5rem 0;
 }
@@ -801,8 +957,8 @@ main {
   font-size: 1.25rem;
   line-height: 1.5;
   color: #05051A;
-  -webkit-transition: color 0.3s ease 0s;
-  transition: color 0.3s ease 0s;
+  -webkit-transition: color 0.5s ease 0s;
+  transition: color 0.5s ease 0s;
 }
 .faq__item {
   background-color: #E1FAFA;
@@ -842,10 +998,10 @@ main {
   background-size: 45%;
   width: 100%;
   height: 100%;
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: -webkit-transform 1s ease;
-  transition: transform 1s ease;
-  transition: transform 1s ease, -webkit-transform 1s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 .faq__item.active .faq__button span {
   -webkit-transform: rotate(45deg);
@@ -853,8 +1009,8 @@ main {
           transform: rotate(45deg);
 }
 .faq__answer {
-  -webkit-transition: max-height 1s ease;
-  transition: max-height 1s ease;
+  -webkit-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease;
   overflow: hidden;
   max-height: 0;
 }
