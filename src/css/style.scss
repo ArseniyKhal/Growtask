@@ -18,6 +18,10 @@
 	font-style: normal;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -101,6 +105,10 @@ body {
 	transition: background-color 0.3s ease 0s;
 	cursor: pointer;
 	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	&:hover {
 		background-color: $light;
 	}
@@ -130,11 +138,7 @@ main {
 			background-color: $socialPress;
 		}
 		& a {
-			height: 3rem;
-			width: 3rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			background-color: $grayWhite;
 		}
 	}
 }
@@ -159,7 +163,55 @@ main {
 	}
 }
 
+.slider {
+	&__content {
+		padding: 7.5rem 0;
+		@media screen and (max-width: 48em) {
+			padding: 2.5rem 0 5rem 0;
+		}
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__buttonBox {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		@media screen and (max-width: 48em) {
+			display: none;
+		}
+	}
+	&__button {
+		background-color: $grayWhite;
+		box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
+		position: relative;
+		&::before,
+		&::after {
+			content: "";
+			background-color: $textBlack;
+			position: absolute;
+			width: 0.53125rem;
+			height: 0.125rem;
+			left: center;
+			border-radius: 0.25rem;
+			transition: all 0.3s ease 0s;
+			transform-origin: left center;
+		}
+		&::before {
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
 
+	
+}
+.nextBtn{
+	transform: rotate(180deg);
+}
 
 @import "header";
 @import "firstscreen";

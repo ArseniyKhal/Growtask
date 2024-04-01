@@ -13,12 +13,21 @@ headerBurgerElement.addEventListener("click", () => {
 	titleMenuElement.classList.toggle('active');
 });
 
+
+navMenu.addEventListener("click", () => {
+	navMenu.classList.remove('active');
+	burgerElement.classList.remove('active');
+	logoElement.classList.remove('active');
+	titleMenuElement.classList.remove('active');
+});
+
+
 // перемотка на верх страницы
 buttonUpElement.addEventListener("click", () => window.scrollTo({
 	top: 0,
 	behavior: 'smooth',
 }))
-
+// для прокрутки можно было бы использовать scrollIntoView()
 
 
 // слайдер
