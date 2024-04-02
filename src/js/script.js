@@ -5,7 +5,7 @@ const buttonUpElement = document.getElementById('buttonUp');
 const logoElement = document.getElementById('logo');
 const titleMenuElement = document.getElementById('titleMenu');
 
-// открытие/закрытие меню header
+// =========  burger ========= 
 headerBurgerElement.addEventListener("click", () => {
 	navMenu.classList.toggle('active');
 	burgerElement.classList.toggle('active');
@@ -22,52 +22,129 @@ navMenu.addEventListener("click", () => {
 });
 
 
-// перемотка на верх страницы
+// ========= перемотка на верх страницы =========
 buttonUpElement.addEventListener("click", () => window.scrollTo({
 	top: 0,
 	behavior: 'smooth',
 }))
 // для прокрутки можно было бы использовать scrollIntoView()
+// кнопку Наверх можно сделать с помощью ссылки на якорь
 
 
-// слайдер
-// const slider = document.querySelector('.slider');
-// const slides = document.querySelector('.slides');
-// const slideItems = document.querySelectorAll('.slide');
-// const slideWidth = slideItems[0].clientWidth;
-// const slidesLength = slideItems.length;
 
-// let currentIndex = 0;
 
-// function slideNext() {
-// 	currentIndex++;
-// 	slides.style.transition = "transform 0.5s ease";
-// 	slides.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+// ========= слайдер ==========
+window.addEventListener('load', function () {
+	const slides = document.querySelectorAll('.slider__item img');
+	const sliderBody = document.querySelector('.slider__body');
 
-// 	if (currentIndex >= slidesLength - 2) {
-// 		slides.addEventListener('transitionend', function () {
-// 			if (currentIndex >= slidesLength - 1) {
-// 				slides.style.transition = "none";
-// 				slides.style.transform = `translateX(0)`;
-// 				currentIndex = 0;
-// 			}
-// 		});
-// 	}
-// }
+	let currentSlide = 0;
 
-// function slidePrev() {
-// 	if (currentIndex <= 0) {
-// 		slides.style.transition = "none";
-// 		slides.style.transform = `translateX(-${slideWidth * (slidesLength - 1)}px)`;
-// 		currentIndex = slidesLength - 2;
-// 	} else {
-// 		currentIndex--;
-// 		slides.style.transition = "transform 0.5s ease";
-// 		slides.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-// 	}
-// }
+	// Функция для определения отступа между слайдами
+	function calculateMarginRightCard() {
+		const firstSlideRect = slides[0].parentNode.getBoundingClientRect();
+		const secondSlideRect = slides[1].parentNode.getBoundingClientRect();
+		return secondSlideRect.left - (firstSlideRect.left + firstSlideRect.width);
+	}
+	const marginRightCard = calculateMarginRightCard();
 
-// табы
+	// добавляем обработчик события клика на кнопки "Next" и "Previous"
+	const nextBtn = document.querySelector('.nextBtn');
+	const prevBtn = document.querySelector('.prevBtn');
+	nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+	prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+
+	// Функция для пролистывания слайдов
+	function goToSlide(n) {
+		slides[currentSlide].parentNode.classList.remove('active');
+		currentSlide = (n + slides.length) % slides.length;
+		slides[currentSlide].parentNode.classList.add('active');
+		// Считаем ширину активного слайда с учетом marginRightCard
+		const activeSlideRect = slides[currentSlide].getBoundingClientRect();
+		const shiftAmount = currentSlide * (activeSlideRect.width + marginRightCard);
+		sliderBody.style.transform = `translateX(-${shiftAmount}px)`;
+	}
+
+	// пролистывание слайдера с помощью свайпа
+	slides.forEach((slide) => {
+		let touchStartX = 0;
+		let touchEndX = 0;
+		slide.addEventListener('touchstart', (event) => {
+			touchStartX = event.touches[0].clientX;
+		});
+		slide.addEventListener('touchmove', (event) => {
+			touchEndX = event.touches[0].clientX;
+		});
+		slide.addEventListener('touchend', () => {
+			const deltaX = touchEndX - touchStartX;
+			if (Math.abs(deltaX) > 50) {
+				if (deltaX > 0) {
+					goToSlide(currentSlide - 1); // Свайп вправо
+				} else if (deltaX < 0) {
+					goToSlide(currentSlide + 1); // Свайп влево
+				}
+			}
+		});
+	});
+});
+
+// ============= Модальное окно для слайдера ============= 
+const sliderItems = document.querySelectorAll('.slider__item');
+const modal = document.getElementById('myModal');
+const modalImg = document.getElementById('modalImg');
+
+// Добавляем обработчик события клика на каждый элемент слайдера
+sliderItems.forEach(item => {
+	item.addEventListener('click', function () {
+		modalImg.src = item.querySelector('img').src;
+		modal.style.display = 'block';
+	});
+});
+
+// Функция для пролистывания слайдов
+function plusSlides(n) {
+	// Получаем текущее отображаемое изображение в модальном окне
+	let currentIndex = Array.from(sliderItems).findIndex(item => item.classList.contains('active'));
+	let nextIndex = currentIndex + n;
+	// Проверяем, чтобы индекс не выходил за границы массива слайдов
+	if (nextIndex >= sliderItems.length) {
+		nextIndex = 0;
+	} else if (nextIndex < 0) {
+		nextIndex = sliderItems.length - 1;
+	}
+	const nextSlide = sliderItems[nextIndex];
+	const imgElement = nextSlide.querySelector('img');
+	modalImg.src = imgElement.src;
+	sliderItems[currentIndex].classList.remove('active');
+	nextSlide.classList.add('active');
+}
+
+// Добавляем обработчик события клика на кнопку закрытия модального окна
+const modalCloseBtn = document.querySelector('.modal__closeBtn');
+modalCloseBtn.addEventListener('click', function () {
+	modal.style.display = 'none';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========= табы =========
 document.addEventListener("DOMContentLoaded", function () {
 	const tabsContainer = document.querySelector('.tabs__buttons');
 	tabsContainer.addEventListener('click', function (event) {
@@ -86,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-// спойлеры
+// ========= спойлеры =========
 const answers = document.querySelectorAll('.faq__item');
 const buttons = document.querySelectorAll('.faq__button');
 

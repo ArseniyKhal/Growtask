@@ -163,9 +163,13 @@
 		height: 3rem;
 		padding: 0 1.25rem;
 		cursor: pointer;
-		transition: color 0.3s ease 0s;
+		transition: all 0.3s ease;
+		border-radius: 0.25rem;
 		&:hover {
 			color: $dark;
+		}
+		&:active {
+			background-color: $grayLighter;
 		}
 		&:last-child {
 			@extend .button;

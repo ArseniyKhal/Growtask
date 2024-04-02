@@ -73,8 +73,8 @@
 			box-shadow: 0 0 1.25rem 0 rgba(13, 64, 64, 0.1);
 			padding: 0.75rem;
 			cursor: pointer;
-			outline: 0px solid $grayLight;
-			transition: outline 0.3s ease 0s;
+			border: 2px solid $grayWhite;
+			transition: border 0.3s ease 0s;
 			width: 100%;
 			& p {
 				font-size: 1.25rem;
@@ -93,10 +93,10 @@
 				border-radius: 0.25rem;
 			}
 			&:hover {
-				outline: 2px solid $grayLight;
+				border: 2px solid $grayLight;
 			}
 			&.active {
-				outline: 2px solid $main;
+				border: 2px solid $main;
 			}
 		}
 	}

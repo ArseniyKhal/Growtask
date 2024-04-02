@@ -14,7 +14,7 @@
 <body>
 	<div class="wrapper">
 
-		<header class="header">
+		<header class="header" id="header">
 			<div class="header__firstLine"></div>
 			<div class="header__container">
 				<div class="header__content">
@@ -123,162 +123,179 @@
 						</div>
 					</div>
 				</div>
-	</div>
-	</section>
+			</section>
 
-
-
-
-
-	<!-- section slider -->
-	<section class="slider" id="slider">
-		<div class="slider__container">
-			<div class="slider__content">
-				<div class="slider__header">
-					<h2 class="slider__title">Сверстай слайдер</h2>
-					<div class="slider__buttonBox">
-						<div class="slider__button prevBtn button"></div>
-						<div class="slider__button nextBtn button"></div>
-					</div>
-				</div>
-				<div class="slider__body">
-					<div class="slider__item imagesBox">
-						<img src="src/img/slider/slider1.jpg" alt="slider" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- section presentation -->
-	<section class="presentation" id="presentation">
-		<div class="presentation__container">
-			<div class="presentation__tabs tabs">
-				<div class="tabs__body">
-					<div class="tabs__block active">
-						<img src="src/img/presentation/presentation1.jpg" alt="presentation" />
-					</div>
-					<div class="tabs__block">
-						<img src="src/img/presentation/presentation2.jpg" alt="presentation" />
-					</div>
-					<div class="tabs__block">
-						<img src="src/img/presentation/presentation3.jpg" alt="presentation" />
-					</div>
-				</div>
-				<div class="tabs__buttons">
-					<div data-target="0" class="tabs__btnBox active">
-						<img src="src/img/presentation/presentation1.jpg" alt="presentation link" />
-						<p>Картинка 1</p>
-					</div>
-					<div data-target="1" class="tabs__btnBox">
-						<img src="src/img/presentation/presentation2.jpg" alt="presentation link" />
-						<p>Картинка 2</p>
-					</div>
-					<div data-target="2" class="tabs__btnBox">
-						<img src="src/img/presentation/presentation3.jpg" alt="presentation link" />
-						<p>Картинка 3</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- section faq -->
-	<section class="faq" id="faq">
-		<div class="faq__container">
-			<h2 class="faq__title">Ответы на вопросы</h2>
-			<ul class="faq__list">
-				<li class="faq__item">
-					<div class="faq__questionBox">
-						<p class="faq__question">У вас много проектов?</p>
-						<button class="faq__button button"> <span /> </button>
-					</div>
-					<p class="faq__answer">У вас много проектов?</p>
-				</li>
-				<li class="faq__item">
-					<div class="faq__questionBox">
-						<p class="faq__question">Есть ли карьерный рост?</p>
-						<button class="faq__button button"> <span /> </button>
-					</div>
-					<p class="faq__answer">Есть ли карьерный рост?</p>
-				</li>
-				<li class="faq__item">
-					<div class="faq__questionBox">
-						<p class="faq__question">У вас большой штат?</p>
-						<button class="faq__button button"> <span /> </button>
-					</div>
-					<p class="faq__answer">У вас большой штат?</p>
-				</li>
-				<li class="faq__item">
-					<div class="faq__questionBox">
-						<p class="faq__question">Какие цели у вашей студии?</p>
-						<button class="faq__button button"> <span /> </button>
-					</div>
-					<p class="faq__answer">Какие цели у вашей студии?</p>
-				</li>
-			</ul>
-		</div>
-	</section>
-
-	</main>
-
-	<footer class="footer">
-		<div class="footer__container">
-			<div class="footer__content">
-
-				<div class="footer__titleBox">
-					<h1 class="footer__title">Форма ОС</h1>
-					<p>Сверстай форму обратной связи. Будет круто, если заявку будут приходить сюда: a@growtask.ru</p>
-				</div>
-
-				<form class="footer__form form" id="form">
-					<input type="text" placeholder="Напиши вопрос*">
-					<input type="text" placeholder="Телефон или почта*">
-					<input type="text" placeholder="Твоё имя*">
-					<input type="text" placeholder="Соц.сеть или мессенджер">
-					<div class="form__buttonBox">
-						<button class="form__button button" type="submit">Отправить заявку</button>
-						<div>
-							<input type="checkbox" class="form__checkbox" id="formCheckbox">
-							<label class="form__label" for="formCheckbox">Согласие с политикой</label>
+			<!-- section slider -->
+			<section class="slider" id="slider">
+				<div class="slider__container">
+					<div class="slider__content">
+						<div class="slider__header">
+							<h2 class="slider__title">Сверстай слайдер</h2>
+							<div class="slider__buttonBox">
+								<div class="slider__button prevBtn button">
+									<img src="src/img/arrow.svg" alt="arrow" />
+								</div>
+								<div class="slider__button nextBtn button">
+									<img src="src/img/arrow.svg" alt="arrow" />
+								</div>
+							</div>
+						</div>
+						<div class="slider__visibleBody">
+							<div class="slider__body" id="imageGallery">
+								<div class="slider__item active">
+									<div class="imagesBox slider__picture">
+										<img src="src/img/slider/slider1.jpg" alt="Северная корона" />
+									</div>
+									<p class="slider__itemText">Северная корона</p>
+								</div>
+								<div class="slider__item">
+									<div class="imagesBox slider__picture">
+										<img src="src/img/slider/slider2.jpg" alt="Moscow barbering school" />
+									</div>
+									<p class="slider__itemText">Moscow barbering school</p>
+								</div>
+								<div class="slider__item">
+									<div class="imagesBox slider__picture">
+										<img src="src/img/slider/slider3.jpg" alt="Rh store" />
+									</div>
+									<p class="slider__itemText">Rh store</p>
+								</div>
+								<div class="slider__item">
+									<div class="imagesBox slider__picture">
+										<img src="src/img/slider/slider4.jpg" alt="oolspecial" />
+									</div>
+									<p class="slider__itemText">Poolspecial</p>
+								</div>
+								<div class="slider__item">
+									<div class="imagesBox slider__picture">
+										<img src="src/img/slider/slider5.jpg" alt="Rh prod" />
+									</div>
+									<p class="slider__itemText">Rh prod</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal" id="myModal">
+							<span class="modal__closeBtn">&times;</span>
+							<img class="modal__content" id="modalImg">
+							<a class="modal__prev" onclick="plusSlides(-1)">&#10094;</a>
+							<a class="modal__next" onclick="plusSlides(1)">&#10095;</a>
 						</div>
 					</div>
-				</form>
+				</div>
+			</section>
 
-				<div class="footer__linksBox">
-					<h4 class="footer__subtitle">Не забудь вставить соц.сети</h4>
-					<ul class="footer__links social">
-						<li class="social__item">
-							<a href="#" class="button">
-								<img src="src/img/VKlogo.svg" alt="VKlogo" />
-							</a>
+			<!-- section presentation -->
+			<section class="presentation" id="presentation">
+				<div class="presentation__container">
+					<div class="presentation__tabs tabs">
+						<div class="tabs__body">
+							<div class="tabs__block active">
+								<img src="src/img/presentation/presentation1.jpg" alt="presentation" />
+							</div>
+							<div class="tabs__block">
+								<img src="src/img/presentation/presentation2.jpg" alt="presentation" />
+							</div>
+							<div class="tabs__block">
+								<img src="src/img/presentation/presentation3.jpg" alt="presentation" />
+							</div>
+						</div>
+						<div class="tabs__buttons">
+							<div data-target="0" class="tabs__btnBox active">
+								<img src="src/img/presentation/presentation1.jpg" alt="presentation link" />
+								<p>Картинка 1</p>
+							</div>
+							<div data-target="1" class="tabs__btnBox">
+								<img src="src/img/presentation/presentation2.jpg" alt="presentation link" />
+								<p>Картинка 2</p>
+							</div>
+							<div data-target="2" class="tabs__btnBox">
+								<img src="src/img/presentation/presentation3.jpg" alt="presentation link" />
+								<p>Картинка 3</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- section faq -->
+			<section class="faq" id="faq">
+				<div class="faq__container">
+					<h2 class="faq__title">Ответы на вопросы</h2>
+					<ul class="faq__list">
+						<li class="faq__item">
+							<div class="faq__questionBox">
+								<p class="faq__question">У вас много проектов?</p>
+								<button class="faq__button button"> <span /> </button>
+							</div>
+							<p class="faq__answer">У вас много проектов?</p>
 						</li>
-						<li class="social__item">
-							<a href="https://t.me/growtask" class="button">
-								<img src="src/img/TGlogo.svg" alt="TGlogo" /></a>
+						<li class="faq__item">
+							<div class="faq__questionBox">
+								<p class="faq__question">Есть ли карьерный рост?</p>
+								<button class="faq__button button"> <span /> </button>
+							</div>
+							<p class="faq__answer">Есть ли карьерный рост?</p>
+						</li>
+						<li class="faq__item">
+							<div class="faq__questionBox">
+								<p class="faq__question">У вас большой штат?</p>
+								<button class="faq__button button"> <span /> </button>
+							</div>
+							<p class="faq__answer">У вас большой штат?</p>
+						</li>
+						<li class="faq__item">
+							<div class="faq__questionBox">
+								<p class="faq__question">Какие цели у вашей студии?</p>
+								<button class="faq__button button"> <span /> </button>
+							</div>
+							<p class="faq__answer">Какие цели у вашей студии?</p>
 						</li>
 					</ul>
 				</div>
+			</section>
+
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__content">
+
+					<div class="footer__titleBox">
+						<h1 class="footer__title">Форма ОС</h1>
+						<p>Сверстай форму обратной связи. Будет круто, если заявку будут приходить сюда: a@growtask.ru</p>
+					</div>
+
+					<form class="footer__form form" id="form">
+						<input type="text" placeholder="Напиши вопрос*">
+						<input type="text" placeholder="Телефон или почта*">
+						<input type="text" placeholder="Твоё имя*">
+						<input type="text" placeholder="Соц.сеть или мессенджер">
+						<div class="form__buttonBox">
+							<button class="form__button button" type="submit">Отправить заявку</button>
+							<div>
+								<input type="checkbox" class="form__checkbox" id="formCheckbox">
+								<label class="form__label" for="formCheckbox">Согласие с политикой</label>
+							</div>
+						</div>
+					</form>
+
+					<div class="footer__linksBox">
+						<h4 class="footer__subtitle">Не забудь вставить соц.сети</h4>
+						<ul class="footer__links social">
+							<li class="social__item">
+								<a href="#" class="button">
+									<img src="src/img/VKlogo.svg" alt="VKlogo" />
+								</a>
+							</li>
+							<li class="social__item">
+								<a href="https://t.me/growtask" class="button">
+									<img src="src/img/TGlogo.svg" alt="TGlogo" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 </body>
 
