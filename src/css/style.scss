@@ -71,13 +71,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	> main {
-		flex: 1 1 auto;
-	}
-	// Фикс для слайдеров
-	// > * {
-	// 	min-width: 0;
-	// }
 }
 
 // ограничивающий контейнер
@@ -86,25 +79,23 @@ body {
 	padding: 0 16px;
 	// ширина FullHD 1420px
 	max-width: 90.75em;
-
 	// ширина HD 1276px
 	@media screen and (max-width: 85.375em) {
 		max-width: 81.75em;
 	}
-	// ширина Tablet 736px
-	@media screen and (max-width: 768px) {
-	}
-	// ширина Mobile 342px
-	@media screen and (max-width: 374px) {
-	}
+}
+
+main {
+	flex: 1 1 auto;
+	margin-top: 4.625rem;
 }
 
 // общие стили кнопки
 .button {
+	cursor: pointer;
 	border-radius: 0.25rem;
 	background-color: $main;
 	transition: background-color 0.3s ease 0s;
-	cursor: pointer;
 	height: 3rem;
 	width: 3rem;
 	display: flex;
@@ -116,10 +107,6 @@ body {
 	&:active {
 		background-color: $dark;
 	}
-}
-
-main {
-	margin-top: 4.625rem;
 }
 
 .social {
@@ -144,12 +131,11 @@ main {
 }
 
 .imagesBox {
-	// aspect-ratio: 1/1;
-	border-radius: 0.5rem;
 	position: relative;
 	overflow: hidden;
 	background: url("../img/non-image.png") no-repeat center center;
 	background-size: cover;
+	border-radius: 0.5rem;
 	& img {
 		position: absolute;
 		width: 100%;

@@ -23,27 +23,31 @@
 		}
 		&__body {
 			@media screen and (min-width: 47.98em) {
-				flex: 1 1 342px;
+				flex: 1 1 21.375rem;
 			}
 			@media screen and (min-width: 56em) {
-				flex: 0 1 844px;
+				flex: 0 1 52.75rem;
 			}
 			@media screen and (min-width: 85.4em) {
-				flex: 0 1 940px;
+				flex: 0 1 58.75rem;
 			}
 			@media screen and (max-width: 47.98em) {
 				margin-bottom: 2.5rem;
 			}
-			overflow: hidden;
 		}
 		&__block {
 			display: none;
+			border-radius: 0.5rem;
+			overflow: hidden;
+			background: url("../img/non-image.png") no-repeat center center;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
 			&.active {
 				display: block;
 			}
 			& img {
 				opacity: 0;
-				border-radius: 0.5rem;
 				animation: fadeIn 0.3s ease forwards;
 				width: 100%;
 				height: 100%;
@@ -54,13 +58,13 @@
 		}
 		&__buttons {
 			@media screen and (min-width: 47.98em) {
-				flex: 0 1 378px;
+				flex: 0 1 23.625rem;
 			}
 			@media screen and (min-width: 56em) {
-				flex: 0 1 392px;
+				flex: 0 1 24.5rem;
 			}
 			@media screen and (min-width: 85.4em) {
-				flex: 0 1 440px;
+				flex: 0 1 27.5rem;
 			}
 			width: 100%;
 		}

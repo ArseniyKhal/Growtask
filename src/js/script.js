@@ -31,8 +31,6 @@ buttonUpElement.addEventListener("click", () => window.scrollTo({
 // кнопку Наверх можно сделать с помощью ссылки на якорь
 
 
-
-
 // ========= слайдер ==========
 window.addEventListener('load', function () {
 	const slides = document.querySelectorAll('.slider__item img');
@@ -126,24 +124,6 @@ modalCloseBtn.addEventListener('click', function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ========= табы =========
 document.addEventListener("DOMContentLoaded", function () {
 	const tabsContainer = document.querySelector('.tabs__buttons');
@@ -169,13 +149,11 @@ const buttons = document.querySelectorAll('.faq__button');
 
 buttons.forEach(function (button, index) {
 	button.addEventListener('click', function () {
-		// Закрываем все спойлеры, кроме текущего
 		answers.forEach(function (answer, i) {
 			if (i !== index) {
 				answer.classList.remove('active');
 			}
 		});
-		// Переключаем состояние текущего спойлера
 		const currentAnswer = answers[index];
 		currentAnswer.classList.toggle('active');
 	});

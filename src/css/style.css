@@ -147,11 +147,6 @@ body {
           flex-direction: column;
   overflow: hidden;
 }
-.wrapper > main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
 
 [class*=__container] {
   margin: 0 auto;
@@ -163,12 +158,20 @@ body {
     max-width: 81.75em;
   }
 }
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-top: 4.625rem;
+}
+
 .button, .navigation__item:last-child {
+  cursor: pointer;
   border-radius: 0.25rem;
   background-color: #14CCCC;
   -webkit-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
-  cursor: pointer;
   height: 3rem;
   width: 3rem;
   display: -webkit-box;
@@ -186,10 +189,6 @@ body {
 }
 .button:active, .navigation__item:active:last-child {
   background-color: #11A6A6;
-}
-
-main {
-  margin-top: 4.625rem;
 }
 
 .social {
@@ -218,11 +217,11 @@ main {
 }
 
 .imagesBox {
-  border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
   background: url("../img/non-image.png") no-repeat center center;
   background-size: cover;
+  border-radius: 0.5rem;
 }
 .imagesBox img {
   position: absolute;
@@ -637,7 +636,16 @@ main {
   }
 }
 .about__info {
-  margin-bottom: 3.75rem;
+  position: sticky;
+  top: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media screen and (max-width: 75em) {
+  .about__info {
+    margin-bottom: 3.75rem;
+  }
 }
 @media screen and (min-width: 48em) and (max-width: 75em) {
   .about__info {
@@ -706,6 +714,7 @@ main {
 }
 .about__photos {
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -997,28 +1006,25 @@ main {
     gap: 2.5rem;
   }
 }
-.presentation .tabs__body {
-  overflow: hidden;
-}
 @media screen and (min-width: 47.98em) {
   .presentation .tabs__body {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 342px;
-            flex: 1 1 342px;
+        -ms-flex: 1 1 21.375rem;
+            flex: 1 1 21.375rem;
   }
 }
 @media screen and (min-width: 56em) {
   .presentation .tabs__body {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 844px;
-            flex: 0 1 844px;
+        -ms-flex: 0 1 52.75rem;
+            flex: 0 1 52.75rem;
   }
 }
 @media screen and (min-width: 85.4em) {
   .presentation .tabs__body {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 940px;
-            flex: 0 1 940px;
+        -ms-flex: 0 1 58.75rem;
+            flex: 0 1 58.75rem;
   }
 }
 @media screen and (max-width: 47.98em) {
@@ -1028,13 +1034,18 @@ main {
 }
 .presentation .tabs__block {
   display: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: url("../img/non-image.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 .presentation .tabs__block.active {
   display: block;
 }
 .presentation .tabs__block img {
   opacity: 0;
-  border-radius: 0.5rem;
   -webkit-animation: fadeIn 0.3s ease forwards;
           animation: fadeIn 0.3s ease forwards;
   width: 100%;
@@ -1049,22 +1060,22 @@ main {
 @media screen and (min-width: 47.98em) {
   .presentation .tabs__buttons {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 378px;
-            flex: 0 1 378px;
+        -ms-flex: 0 1 23.625rem;
+            flex: 0 1 23.625rem;
   }
 }
 @media screen and (min-width: 56em) {
   .presentation .tabs__buttons {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 392px;
-            flex: 0 1 392px;
+        -ms-flex: 0 1 24.5rem;
+            flex: 0 1 24.5rem;
   }
 }
 @media screen and (min-width: 85.4em) {
   .presentation .tabs__buttons {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 440px;
-            flex: 0 1 440px;
+        -ms-flex: 0 1 27.5rem;
+            flex: 0 1 27.5rem;
   }
 }
 .presentation .tabs__btnBox {
