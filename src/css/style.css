@@ -1036,10 +1036,7 @@ main {
   display: none;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: url("../img/non-image.png") no-repeat center center;
-  background-size: cover;
   width: 100%;
-  height: 100%;
 }
 .presentation .tabs__block.active {
   display: block;
